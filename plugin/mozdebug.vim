@@ -14,10 +14,15 @@ endif
 let g:loaded_mozdebug=1
 
 """ GLOBAL VARIABLES """
-
-let g:MozreplServer="127.0.0.1 4242"
-let g:MozreplDebug=0
-let g:MozreplHighlightStyle = 'border: solid 2px #ff00ff !important;'
+if !exists('g:MozreplServer')
+  let g:MozreplServer="127.0.0.1 4242"
+end
+if !exists('g:MozreplDebug')
+  let g:MozreplDebug=0
+end
+if !exists('g:MozreplHighlightStyle')
+  let g:MozreplHighlightStyle = 'border: solid 2px #ff00ff !important;'
+end
 
 """ COMMAND BINDINGS """
 
