@@ -1,0 +1,30 @@
+*mozdebug.txt* Plugin for front-end debugging
+
+Installation:
+
+You'll need MozRepl (https://addons.mozilla.org/en-US/firefox/addon/mozrepl/) 
+installed in your Firefox.
+
+Commands:
+
+:Mozrepl <javascript code>
+    Pass some code to be executed in Firefox via MozRepl
+
+:MozReload
+    Reload the current tab in Firefox
+
+:MozReloadCss
+    Instead reloading the whole tab, reload only its stylesheets
+
+Configuration:
+
+g:MozreplServer="<ip> <port>" 
+    The address of Firefox's MozRepl server. The default should work fine, 
+    unless Vim and Firefox are on different machines.
+
+g:MozreplHighlightStyle="<css style>"
+    The style of highlighting for MozreplHighlightSelector. The default
+    is a bright magenta border. 
+
+g:MozreplDebug=0/1
+    Set to 1 to see actual commands passed to MozRepl
