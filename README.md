@@ -10,6 +10,6 @@
 
 `:help mozdebug`
 
-~~~
+* * * 
 
 2011 [Leonid Shevtsov](http://leonid.shevtsov.me)
