@@ -1,13 +1,32 @@
 *mozdebug.txt* Plugin for front-end debugging
 
-Installation:
+This plugin uses a Firefox extension called MozRepl to control Firefox without
+having to switch to the Firefox window itself. For instance, instead of having
+to alt+tab ctrl+f5 to reload the page, you can 
+
+>
+map <silent> <F5> :MozReload<CR>
+<
+
+and just hit <F5> from Vim to reload the page.
+
+Note: the plugin makes no attempt to find the "correct" tab in Firefox, and
+    works with the currently selected one.
+
+Note: MozRepl can be used to retrieve sensitive private information, like
+    cookies, from your browser. Check that external connections to MozRepl are
+    impossible (which is the default setting, by the way).
+
+===============================================================================
+Installation ~
 
 You'll need MozRepl (https://addons.mozilla.org/en-US/firefox/addon/mozrepl/) 
 installed in your Firefox.
 
-Commands:
+===============================================================================
+Commands ~
 
-:Mozrepl <javascript code>
+:Mozrepl <javascript code> 
     Pass some code to be executed in Firefox via MozRepl
 
 :MozReload
@@ -16,11 +35,14 @@ Commands:
 :MozReloadCss
     Instead reloading the whole tab, reload only its stylesheets
 
-Configuration:
+===============================================================================
+Configuration ~
 
-g:MozreplServer="<ip> <port>" 
+g:MozreplServer="(ip-address) (port)" 
     The address of Firefox's MozRepl server. The default should work fine, 
     unless Vim and Firefox are on different machines.
+
+    The address and port must be separated with a space.
 
 g:MozreplHighlightStyle="<css style>"
     The style of highlighting for MozreplHighlightSelector. The default

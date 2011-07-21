@@ -8,7 +8,7 @@
 
 ## Usage
 
-`:help mozdebug`
+`:help mozdebug.txt`
 
 * * * 
 

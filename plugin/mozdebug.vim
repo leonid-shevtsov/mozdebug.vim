@@ -8,14 +8,14 @@
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
-" if exists("g:loaded_mozdebug")
-"   finish
-" endif
-" let g:loaded_mozdebug=1
+if exists("g:loaded_mozdebug")
+  finish
+endif
+let g:loaded_mozdebug=1
 
 """ GLOBAL VARIABLES """
 
-let g:MozreplServer="192.168.56.1 4242"
+let g:MozreplServer="127.0.0.1 4242"
 let g:MozreplDebug=0
 let g:MozreplHighlightStyle = 'border: solid 2px #ff00ff !important;'
 
@@ -48,7 +48,7 @@ function! MozreplExecute(mozrepl_command)
 endfunction
 
 function! MozReload()
-  call MozreplExecute('content.window.location.reload()')
+  call MozreplExecute('content.window.location.reload(true)')
 endfunction
 
 function! MozReloadCss()
