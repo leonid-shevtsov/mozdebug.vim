@@ -11,8 +11,11 @@ function! MozreplExecute(mozrepl_command)
   if g:MozreplDebug
     exec '!echo "'.MozreplBuildWrapper(a:mozrepl_command).'" | nc '.g:MozreplServer
   else
-    exec 'silent !echo "'.MozreplBuildWrapper(a:mozrepl_command).'" | nc '.g:MozreplServer.' 2>&1 >/dev/null'
+    exec 'silent !echo "'.MozreplBuildWrapper(a:mozrepl_command).'" | nc -w 5 '.g:MozreplServer.' 2>&1 >/dev/null'
   endif
+  if v:shell_error
+    echo "Mozrepl @ ".g:MozreplServer." did not accept connection. Start Firefox, or check value of g:MozreplServer."
+  end
 endfunction
 
 function! Refresh()
